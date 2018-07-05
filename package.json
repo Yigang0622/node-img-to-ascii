@@ -1,0 +1,26 @@
+{
+  "name": "img-to-ascii",
+  "version": "1.0.0",
+  "description": "a web server to convert image to ascii string",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Yigang0622/node-img-to-ascii.git"
+  },
+  "author": "Yigang Zhou",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Yigang0622/node-img-to-ascii/issues"
+  },
+  "homepage": "https://github.com/Yigang0622/node-img-to-ascii#readme",
+  "dependencies": {
+    "express": "^4.16.3",
+    "formidable": "^1.2.1",
+    "fs": "0.0.1-security",
+    "hbs": "^4.0.1",
+    "jimp": "^0.2.28"
+  }
+}
