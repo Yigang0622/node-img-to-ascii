@@ -1,8 +1,7 @@
 const fs = require('fs');
 const jimp = require('jimp');
 
-var original = fs.readFileSync('template.html','utf-8');
-
+let original = fs.readFileSync('template.html','utf-8');
 
 module.exports = {
   getASCIIHtml: getASCIIHtml
@@ -11,7 +10,7 @@ module.exports = {
 /*
 this method will convert image to ASCII and save the html file to completed folder and return the file name
  */
-function getASCIIHtml(file, callback){
+function getASCIIHtml(file, callback, error){
 
     jimp.read(file).then(function (image) {
         var image = image.resize(500,jimp.AUTO);           // resize
@@ -60,6 +59,7 @@ function getASCIIHtml(file, callback){
         });
 
     }).catch(function (err) {
+        error('Parsing image error');
         console.error(err);
     });
 }
@@ -70,4 +70,3 @@ String.prototype.replaceAll = function(search, replacement) {
     return target.replace(new RegExp(search, 'g'), replacement);
 };
 
-console.log('Hi');

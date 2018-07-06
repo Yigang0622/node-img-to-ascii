@@ -13,7 +13,7 @@ app.get('/', (req,res) => {
 app.post('/upload', (req,res) => {
    console.log('upload');
 
-    var form = new formidable.IncomingForm();
+    let form = new formidable.IncomingForm();
 
     form.parse(req);
 
@@ -26,7 +26,10 @@ app.post('/upload', (req,res) => {
         imageCore.getASCIIHtml(file.path, (id) => {
             res.sendFile(__dirname+'/completed/'+id+'.html')
         });
+    }, (err) => {
+        res.send(err);
     });
+
 
     //
     // form.on('end', function(fields, files) {
